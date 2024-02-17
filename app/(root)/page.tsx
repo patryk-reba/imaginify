@@ -15,7 +15,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
       <section className="home">
         <h1 className="home-heading">
-          Unleash Your Creative Vision with Reba's AI
+          Unleash Your Creative Vision with Reba AI
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 6).map((link) => (
