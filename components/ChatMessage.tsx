@@ -2,8 +2,7 @@ import { cn } from "@/lib/utils";
 import { IconOpenAI, IconUser } from "@/components/icons";
 import type { Message } from "ai/react";
 
-export function ChatMessage({ message }: Message) {
-  console.debug("ChatMessage", message);
+export function ChatMessage({ message }: { message: Message }) {
   return (
     <div className={cn("group relative mb-4 flex items-start")}>
       <div
