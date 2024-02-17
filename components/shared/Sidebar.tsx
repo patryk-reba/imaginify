@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="flex size-full flex-col gap-4">
+      <div className="flex size-full flex-col gap-4 overflow-y-scroll">
         <Link href="/" className="sidebar-logo">
           <Image
             src="/assets/images/logo-text.svg"
