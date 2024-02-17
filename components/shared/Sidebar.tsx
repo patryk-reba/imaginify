@@ -19,6 +19,13 @@ const Sidebar = () => {
             alt="logo"
             width={180}
             height={28}
+            className="-ml-4 -mr-4"
+          />
+          <Image
+            src="/assets/images/logo-icon.svg"
+            alt="logo"
+            width={28}
+            height={28}
           />
         </Link>
 
