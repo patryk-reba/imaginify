@@ -51,6 +51,10 @@ export function Chat() {
         </div>
       ) : (
         <>
+          <div
+            className=" fixed inset-0 bg-gray-400 bg-opacity-20"
+            onClick={toggleChat}
+          />
           <Card className="fixed bottom-4 right-4 w-full max-w-sm m-0 shadow-xl">
             <CardHeader className="rounded-t-lg">
               <div className="flex items-center justify-between">
@@ -80,6 +84,7 @@ export function Chat() {
                         className="search-field  h-8"
                         value={input}
                         onChange={handleInputChange}
+                        autoFocus
                       />
                     </div>
                     <Button

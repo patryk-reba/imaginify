@@ -30,7 +30,7 @@ const GeneratedImage = ({
   return (
     <div className="flex flex-col gap-4 items-center">
       <div className="flex-between">
-        <h3 className="h3-bold text-dark-600">Generated Image</h3>
+        <h3 className="h3-bold text-text-secondary">Generated Image</h3>
 
         {hasDownload && (
           <button className="download-btn" onClick={downloadHandler}>
