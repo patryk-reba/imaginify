@@ -1,10 +1,11 @@
 import { cn } from "@/lib/utils";
 import { IconOpenAI, IconUser } from "@/components/icons";
+import type { Message } from "ai/react";
 
-export function ChatMessage({ message, ...props }) {
+export function ChatMessage({ message }: Message) {
   console.debug("ChatMessage", message);
   return (
-    <div className={cn("group relative mb-4 flex items-start")} {...props}>
+    <div className={cn("group relative mb-4 flex items-start")}>
       <div
         className={cn(
           "flex  select-none rounded-md border shadow",

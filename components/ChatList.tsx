@@ -1,15 +1,12 @@
 import { type Message } from "ai";
 
-// import { Separator } from '@/components/ui/separator'
 import { ChatMessage } from "@/components/ChatMessage";
 
 export interface ChatList {
   messages: Message[];
-  screenshot: string;
-  isLoading: boolean;
 }
 
-export function ChatList({ messages, screenshot, isLoading }: ChatList) {
+export function ChatList({ messages }: ChatList) {
   if (!messages.length) {
     return null;
   }
