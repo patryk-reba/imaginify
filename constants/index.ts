@@ -12,7 +12,7 @@ export const navLinks = [
   {
     label: "Generative Fill",
     route: "/transformations/add/fill",
-    icon: "/assets/icons/stars.svg",
+    icon: "/assets/icons/fill.svg",
   },
   {
     label: "Object Remove",
@@ -23,6 +23,11 @@ export const navLinks = [
     label: "Object Recolor",
     route: "/transformations/add/recolor",
     icon: "/assets/icons/filter.svg",
+  },
+  {
+    label: "Generate Image",
+    route: "/transformations/add/generate",
+    icon: "/assets/icons/stars.svg",
   },
   {
     label: "Background Remove",
@@ -158,6 +163,13 @@ export const transformationTypes = {
       recolor: { prompt: "", to: "", multiple: true },
     },
     icon: "filter.svg",
+  },
+  generate: {
+    type: "generate",
+    title: "Generate Image",
+    subTitle: "Generate images using AI",
+    // config: { generate: true },
+    icon: "stars.svg",
   },
 };
 

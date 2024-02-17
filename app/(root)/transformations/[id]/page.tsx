@@ -8,11 +8,14 @@ import { Button } from "@/components/ui/button";
 import { getImageById } from "@/lib/actions/image.actions";
 import { getImageSize } from "@/lib/utils";
 import { DeleteConfirmation } from "@/components/shared/DeleteConfirmation";
+import GeneratedImage from "@/components/shared/GeneratedImage";
 
 const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
   const { userId } = auth();
 
   const image = await getImageById(id);
+
+  const dalleGenerated = image.transformationType === "generate";
 
   return (
     <>
@@ -58,29 +61,40 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
       </section>
 
       <section className="mt-10 border-t border-dark-400/15">
-        <div className="transformation-grid">
+        <div className={!dalleGenerated && "transformation-grid"}>
           {/* MEDIA UPLOADER */}
-          <div className="flex flex-col gap-4">
-            <h3 className="h3-bold text-dark-600">Original</h3>
+          {!dalleGenerated && (
+            <div className="flex flex-col gap-4">
+              <h3 className="h3-bold text-dark-600">Original</h3>
 
-            <Image
-              width={getImageSize(image.transformationType, image, "width")}
-              height={getImageSize(image.transformationType, image, "height")}
-              src={image.secureURL}
-              alt="image"
-              className="transformation-original_image"
-            />
-          </div>
+              <Image
+                width={getImageSize(image.transformationType, image, "width")}
+                height={getImageSize(image.transformationType, image, "height")}
+                src={image.secureURL}
+                alt="image"
+                className="transformation-original_image"
+              />
+            </div>
+          )}
 
           {/* TRANSFORMED IMAGE */}
-          <TransformedImage
-            image={image}
-            type={image.transformationType}
-            title={image.title}
-            isTransforming={false}
-            transformationConfig={image.config}
-            hasDownload={true}
-          />
+          {dalleGenerated ? (
+            <GeneratedImage
+              image={image}
+              title={image.title}
+              isTransforming={false}
+              hasDownload={true}
+            />
+          ) : (
+            <TransformedImage
+              image={image}
+              type={image.transformationType}
+              title={image.title}
+              isTransforming={false}
+              transformationConfig={image.config}
+              hasDownload={true}
+            />
+          )}
         </div>
 
         {userId === image.author.clerkId && (

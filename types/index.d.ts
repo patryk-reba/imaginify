@@ -93,7 +93,8 @@ declare type TransformationTypeKey =
   | "fill"
   | "remove"
   | "recolor"
-  | "removeBackground";
+  | "removeBackground"
+  | "generate";
 
 // ====== URL QUERY PARAMS
 declare type FormUrlQueryParams = {
@@ -135,4 +136,11 @@ declare type TransformedImageProps = {
   isTransforming: boolean;
   hasDownload?: boolean;
   setIsTransforming?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+declare type GeneratedImageProps = {
+  image: any;
+  title: string;
+  isTransforming: boolean;
+  hasDownload?: boolean;
 };
