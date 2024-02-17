@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { CardHeader, CardContent, Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useChat, type Message } from "ai/react";
 import { useLocalStorage } from "@/lib/hooks/use-local-storage";
 import { ChatList } from "./ChatList";
@@ -29,11 +29,27 @@ export function Chat() {
     setInput,
     handleInputChange,
     handleSubmit,
-  } = useChat();
+  } = useChat({
+    initialMessages: [
+      {
+        role: "system",
+        content: "Hi! I am Alice, how can I help you?",
+        id: nanoid(),
+      },
+    ],
+  });
 
   function toggleChat() {
     setIsChatOpen((prev) => !prev);
   }
+
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    ref.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+  }, [messages[messages.length - 1]?.content.length]);
 
   return (
     <div className="">
@@ -74,6 +90,7 @@ export function Chat() {
                 <div className="flex items-start gap-2">
                   <ChatList messages={messages} />
                 </div>
+                <div ref={ref} />
               </div>
               <div className="border-t border-gray-200 dark:border-gray-700">
                 <div>

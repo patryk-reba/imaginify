@@ -7,7 +7,7 @@ export function ChatMessage({ message }: { message: Message }) {
     <div className={cn("group relative mb-4 flex items-start")}>
       <div
         className={cn(
-          "flex  select-none rounded-md border shadow",
+          "flex  select-none rounded-md border shadow mt-1",
           message.role === "user"
             ? "bg-background"
             : "bg-primary text-primary-foreground"
