@@ -39,7 +39,6 @@ import { getCldImageUrl } from "next-cloudinary";
 import { addImage, updateImage } from "@/lib/actions/image.actions";
 import { useRouter } from "next/navigation";
 import { InsufficientCreditsModal } from "./InsufficientCreditsModal";
-import Image from "next/image";
 import GeneratedImage from "./GeneratedImage";
 
 export const formSchema = z.object({
