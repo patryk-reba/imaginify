@@ -266,7 +266,7 @@ const TransformationForm = ({
             className="w-full"
             render={({ field }) => (
               <Select
-                onValueChange={(value) =>
+                onValueChange={(value: string) =>
                   onSelectFieldHandler(value, field.onChange)
                 }
                 value={field.value}
@@ -363,22 +363,12 @@ const TransformationForm = ({
             />
           </div>
         )}
-        {/* {generateImageUrl && (
-          <Image
-            src={generateImageUrl}
-            alt="Generated Image"
-            width={512}
-            height={512}
-          />
-        )} */}
 
         {type === "generate" && (
           <GeneratedImage
             image={image}
-            type={type}
             title={form.getValues().title}
             isTransforming={isTransforming}
-            setIsTransforming={setIsTransforming}
           />
         )}
 

@@ -168,7 +168,7 @@ export const transformationTypes = {
     type: "generate",
     title: "Generate Image",
     subTitle: "Generate images using AI",
-    // config: { generate: true },
+    config: null,
     icon: "stars.svg",
   },
 };
