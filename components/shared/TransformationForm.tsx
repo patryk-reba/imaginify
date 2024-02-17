@@ -66,7 +66,6 @@ const TransformationForm = ({
   const [isTransforming, setIsTransforming] = useState(false);
   const [transformationConfig, setTransformationConfig] = useState(config);
   const [isPending, startTransition] = useTransition();
-  document.body.classList.toggle("dark");
 
   const router = useRouter();
 

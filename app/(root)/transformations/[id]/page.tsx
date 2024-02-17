@@ -61,7 +61,7 @@ const ImageDetails = async ({ params: { id } }: SearchParamProps) => {
       </section>
 
       <section className="mt-10 border-t border-dark-400/15">
-        <div className={!dalleGenerated && "transformation-grid"}>
+        <div className={!dalleGenerated ? "transformation-grid" : ""}>
           {/* MEDIA UPLOADER */}
           {!dalleGenerated && (
             <div className="flex flex-col gap-4">

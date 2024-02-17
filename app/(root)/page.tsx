@@ -1,4 +1,5 @@
 import { Collection } from "@/components/shared/Collection";
+import { Chat } from "@/components/Chat";
 import { navLinks } from "@/constants";
 import { getAllImages } from "@/lib/actions/image.actions";
 import Image from "next/image";
@@ -14,7 +15,7 @@ const Home = async ({ searchParams }: SearchParamProps) => {
     <>
       <section className="home">
         <h1 className="home-heading">
-          Unleash Your Creative Vision with Reba AI
+          Unleash Your Creative Vision with Reba's AI
         </h1>
         <ul className="flex-center w-full gap-20">
           {navLinks.slice(1, 6).map((link) => (
