@@ -9,7 +9,7 @@
   </div>
 
   <h3 align="center">An AI SaaS Platform</h3>
-## <a name="tech-stack">⚙️ Tech Stack</a>
+  ## <a name="tech-stack">⚙️ Tech Stack</a>
 
 Next.js
 TypeScript
@@ -22,9 +22,9 @@ TailwindCSS
 Dall-e
 GPT-3.5
 
-</div>
 ## <a name="features">🔋 Features</a>
 
+</div>
 👉 **Authentication and Authorization**: Secure user access with registration, login, and route protection.
 
 👉 **Community Image Showcase**: Explore user transformations with easy navigation using pagination
