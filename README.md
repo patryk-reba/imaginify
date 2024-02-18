@@ -8,9 +8,10 @@
     <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=06B6D4" alt="tailwindcss" />
   </div>
 
-  <h3 align="center">An AI SaaS Platform</h3>
-## <a name="tech-stack">⚙️ Tech Stack</a>
+<h3 align="center">An AI SaaS Platform</h3>
 
+
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
 Next.js
 TypeScript
@@ -26,7 +27,10 @@ GPT-3.5
 ## <a name="features">🔋 Features</a>
 
 </div>
-👉 **Authentication and Authorization**: Secure user access with registration, login, and route protection.
+
+👉 **Authentication and Authorization** Secure user access with registration, login, and route protection.
+
+👉 **The GPT-4 powered chat assistant** Interact with Alice, the GPT-4 powered chat assistant, for instant support and guidance.
 
 👉 **Community Image Showcase**: Explore user transformations with easy navigation using pagination
 
