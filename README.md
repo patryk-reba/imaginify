@@ -9,20 +9,20 @@
   </div>
 
   <h3 align="center">An AI SaaS Platform</h3>
-
 ## <a name="tech-stack">⚙️ Tech Stack</a>
 
-- Next.js
-- TypeScript
-- MongoDB
-- Clerk
-- Cloudinary
-- Stripe
-- Shadcn
-- TailwindCSS
-- Dall-e
-- GPT-3.5
+Next.js
+TypeScript
+MongoDB
+Clerk
+Cloudinary
+Stripe
+Shadcn
+TailwindCSS
+Dall-e
+GPT-3.5
 
+</div>
 ## <a name="features">🔋 Features</a>
 
 👉 **Authentication and Authorization**: Secure user access with registration, login, and route protection.
