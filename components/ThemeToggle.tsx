@@ -13,7 +13,7 @@ export const ThemeToggle = () => {
       className="md:fixed top-4 right-4 cursor-pointer shadow-xl rounded-full p-2 bg-purple-100 w-max"
     >
       <Image
-        src="/assets/icons/darkmode.svg"
+        src="/assets/icons/dark-mode.svg"
         alt="image"
         width={24}
         height={24}
