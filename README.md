@@ -9,7 +9,7 @@
   </div>
 
   <h3 align="center">An AI SaaS Platform</h3>
-  ## <a name="tech-stack">⚙️ Tech Stack</a>
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
 Next.js
 TypeScript
