@@ -15,6 +15,7 @@ import { useLocalStorage } from "@/lib/hooks/use-local-storage";
 import { ChatList } from "./ChatList";
 import { nanoid } from "nanoid";
 import { IconOpenAI } from "./icons";
+import { SignedIn } from "@clerk/nextjs";
 
 export function Chat() {
   const [isChatOpen, setIsChatOpen] = useState(false);
@@ -52,7 +53,7 @@ export function Chat() {
   }, [messages[messages.length - 1]?.content.length]);
 
   return (
-    <div className="">
+    <SignedIn>
       {!isChatOpen ? (
         <div
           onClick={toggleChat}
@@ -118,7 +119,7 @@ export function Chat() {
           </Card>
         </>
       )}
-    </div>
+    </SignedIn>
   );
 }
 
