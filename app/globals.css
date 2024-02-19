@@ -300,7 +300,7 @@
 
   /* Navbar Component */
   .header {
-    @apply flex-between fixed h-16 w-full border-b-4 border-purple-100 bg-primary-foreground p-5 lg:hidden;
+    @apply flex-between fixed h-16 w-full border-b-4 border-border bg-primary-foreground p-5 lg:hidden;
   }
 
   .header-nav_elements {
@@ -314,7 +314,7 @@
 
   /* Sidebar Component */
   .sidebar {
-    @apply hidden h-screen w-72 bg-background p-5 shadow-md shadow-purple-200/50 lg:flex;
+    @apply hidden h-screen w-72 bg-background p-5 shadow-md shadow-purple-200/50 lg:flex overflow-y-scroll;
   }
 
   .sidebar-logo {
@@ -322,7 +322,7 @@
   }
 
   .sidebar-nav {
-    @apply h-full flex-col justify-between md:flex md:gap-4;
+    @apply h-full flex-col justify-between md:flex md:gap-4  ;
   }
 
   .sidebar-nav_elements {

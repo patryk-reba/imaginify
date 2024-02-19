@@ -2,6 +2,15 @@ import { cn } from "@/lib/utils";
 import { IconOpenAI, IconUser } from "@/components/icons";
 import type { Message } from "ai/react";
 
+function isValidJson(json: string) {
+  try {
+    JSON.parse(json);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 export function ChatMessage({ message }: { message: Message }) {
   return (
     <div className={cn("group relative mb-4 flex items-start")}>

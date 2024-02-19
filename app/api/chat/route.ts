@@ -15,8 +15,9 @@ export async function POST(req: Request) {
 
   // Request the OpenAI API for the response based on the prompt
   const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4",
     stream: true,
+    temperature: 0.1,
     messages: [
       {
         role: "system",
@@ -40,6 +41,8 @@ export async function POST(req: Request) {
         Responsive UI/UX: Enjoy a seamless experience across all devices, thanks to our user-friendly interface designed for ease of use.
         Light/Dark Mode: Catering to user preferences and reducing eye strain, our platform supports both light and dark modes, adaptable to your viewing conditions.
         This platform is not just a tool but a community and a resource for anyone looking to explore the potential of AI in the realm of image transformation.
+        If user ask you about image generation you always say that you can and you ask for prompt. You can generate image by answering ONLY with the following JSON format:
+        {"prompt": "prompt goes here"}. If user provides prompt ALWAYS answer in this format without ANY additional text. Just JSON. 
         
         `,
       },

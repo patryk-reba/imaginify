@@ -19,7 +19,7 @@ import { SignedIn } from "@clerk/nextjs";
 
 export function Chat() {
   const [isChatOpen, setIsChatOpen] = useState(false);
-
+  const [hasCalledPuppeteer, setHasCalledPuppeteer] = useState(false);
   const {
     messages,
     append,
@@ -51,6 +51,55 @@ export function Chat() {
       block: "end",
     });
   }, [messages[messages.length - 1]?.content.length]);
+
+  const lastMessage = messages[messages.length - 1];
+
+  async function puppeteer(prompt: string) {
+    try {
+      const res = await fetch("/api/puppeteer", {
+        method: "POST",
+        body: JSON.stringify({ prompt }), // send the prompt as a JSON string in the request body
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!res.ok) {
+        throw new Error("Network response was not ok");
+      }
+
+      const data = await res.json();
+      console.debug(data);
+
+      // await append({
+      //   role: "system",
+      //   content: "Refresh home page to see the generated image",
+      // });
+    } catch (error) {
+      console.error(error);
+      await append({
+        role: "system",
+        content: "Something went wrong",
+      });
+    } finally {
+      window.location.reload();
+    }
+  }
+
+  function isValidJson(json: string) {
+    try {
+      JSON.parse(json);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+  if (isValidJson(lastMessage.content) && !hasCalledPuppeteer) {
+    setHasCalledPuppeteer(true);
+    puppeteer(lastMessage.content);
+
+    console.debug("puppeteer called");
+  }
 
   return (
     <SignedIn>
@@ -89,7 +138,7 @@ export function Chat() {
             <CardContent className="p-0">
               <div className="flex flex-col gap-2 p-4 h-[200px] overflow-y-scroll">
                 <div className="flex items-start gap-2">
-                  <ChatList messages={messages} />
+                  <ChatList messages={messages} append={append} />
                 </div>
                 <div ref={ref} />
               </div>
