@@ -1,4 +1,4 @@
-async function sleep(milliseconds) {
+async function sleep(milliseconds: number) {
   return await new Promise<void>((r, _) => {
     setTimeout(() => {
       r();
@@ -6,9 +6,12 @@ async function sleep(milliseconds) {
   });
 }
 
-async function waitForEvent(page, event) {
+async function waitForEvent(
+  page: { evaluate: (arg0: (event: any) => Promise<void>, arg1: any) => any },
+  event: string
+) {
   return page.evaluate((event) => {
-    return new Promise((r, _) => {
+    return new Promise<void>((r, _) => {
       document.addEventListener(event, function (e) {
         r();
       });
@@ -32,7 +35,7 @@ export async function POST(req: Request) {
     height: 1074,
   });
 
-  const promises = [];
+  const promises: Promise<any>[] = [];
   const startWaitingForEvents = () => {
     promises.push(targetPage.waitForNavigation());
   };
